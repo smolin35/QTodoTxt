@@ -39,7 +39,7 @@ class TaskWidget(QWidget):
         return QSize(self.parent().size().width(), new_height)
 
     def edit(self):
-        self.editor.setText(self.task.text)
+        self.editor.setPlainText(self.task.text)
         self.layout.setCurrentIndex(1)
         self.editor.setFocus()
 
@@ -63,7 +63,7 @@ class TaskWidget(QWidget):
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Escape:
-            self.editor.setText(self.task.text)
+            self.editor.setPlainText(self.task.text)
             self.layout.setCurrentIndex(0)
             self.parent().setFocus()
             return
