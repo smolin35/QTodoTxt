@@ -209,7 +209,7 @@ class TaskEditorLineEdit(QtWidgets.QTextEdit):
         newtext = currentText[:textFirstPart] + completion + " " + currentText[textLastPart:]
         newCursorPos = cursor.position() + (len(completion) - completionPrefixSize) + 1
 
-        self.setText(newtext)
+        self.setPlainText(newtext)
         cursor.setPosition(newCursorPos)
         self.setTextCursor(cursor)
 
